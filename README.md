@@ -1,112 +1,413 @@
-# **SCMS - Students and Courses Management System**
+# 🎓 Students and Courses Management System
 
-<div align="center">
-  <h3>A modern, production-grade administrative web application built with Java SE and SQLite.</h3>
-</div>
+A modern and efficient **Students and Courses Management System (SCMS)** designed to streamline academic operations such as student management, course handling, enrollments, and administrative workflows.
+
+This project provides a centralized platform for managing educational data with a clean interface and structured backend architecture.
 
 ---
 
-## **1. Introduction**
+# 📌 Table of Contents
 
-Welcome to the **Students and Courses Management System (SCMS)** (formerly CCRM). SCMS is a robust, elegant web application engineered to solve real-world complexities in academic administration. Transitioning from legacy paper trails to a highly resilient, centralized digital architecture, SCMS eliminates manual bottlenecks, enforces strict data integrity, and scales effortlessly from small campuses to massive universities.
+- [Overview](#-overview)
+- [Features](#-features)
+- [Tech Stack](#-tech-stack)
+- [System Architecture](#️-system-architecture)
+- [Data Flow Diagram](#-complete-data-flow-diagram)
+- [Database Design](#️-database-er-diagram)
+- [Project Structure](#-project-structure)
+- [Installation Guide](#️-installation-guide)
+- [Database Setup](#️-database-setup)
+- [Running the Project](#️-running-the-project)
+- [Screenshots](#-screenshots)
+- [Future Enhancements](#-future-enhancements)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Author](#-author)
 
-SCMS empowers administrators with a stunning glassmorphism UI and a suite of powerful tools:
+---
 
-* **Student Administration**: Effortlessly add, list, and update student information with beautiful floating-label forms.
-* **Course Coordination**: Create, list, and modify courses, and assign instructors with ease.
-* **Enrollment Oversight**: Manage student course registrations, tracking total enrollments directly from the live dashboard.
-* **Live Dashboard**: Monitor system metrics (Total Students, Active Courses, Total Enrollments) in real-time.
-* **Modern Feedback**: Enjoy smooth toast notifications, responsive table badges, and staggered page animations.
+# 📖 Overview
 
-## **2. UI Showcase**
+The **Students and Courses Management System** is a web-based application developed to simplify the management of:
 
-Take a look at the production-level UI that powers SCMS!
+- Student records
+- Course details
+- Enrollments
+- Academic administration
 
-### **Live Dashboard**
+The system helps administrators efficiently organize and maintain academic data while providing users with a smooth, scalable, and beautifully designed glassmorphism experience.
+
+---
+
+# ✨ Features
+
+## 👨‍🎓 Student Management
+- Add new students via modern floating-label forms
+- View all student records
+- Track student statuses via intuitive, colorful badges
+
+## 📚 Course Management
+- Create new courses
+- View course details and credits
+- Assign courses to specific departments and semesters
+
+## 📝 Enrollment System
+- Enroll students in courses
+- Manage student-course relationships
+- Track registered courses
+
+## 📊 Dashboard
+- Real-time overview of metrics
+- Academic statistics (Total Students, Active Courses, Total Enrollments)
+- Interactive hover effects and quick access to system modules
+
+## 🗄️ Database Operations
+- Efficient file-based CRUD operations
+- Zero-configuration auto-setup schema
+- Relational database design utilizing Java JDBC
+
+---
+
+# 🛠️ Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| **HTML5** | Frontend Structure |
+| **CSS3** | Glassmorphism Styling & Animations |
+| **Vanilla JS** | Frontend Interactivity & API Fetching |
+| **Java SE 11+** | Backend Server (`com.sun.net.httpserver`) |
+| **SQLite** | Local File-Based Database Management |
+| **JDBC** | Database Connectivity |
+
+---
+
+# 🏗️ System Architecture
+
+```mermaid
+flowchart TB
+
+    User[User / Admin]
+
+    subgraph Frontend
+        UI[Web Interface]
+    end
+
+    subgraph Backend
+        JavaServer[Java HTTP Web Server]
+        Student[Student Service]
+        Course[Course Service]
+        Enrollment[Enrollment Service]
+    end
+
+    subgraph Database
+        DB[(SQLite File Database)]
+    end
+
+    User --> UI
+
+    UI -->|API Requests| JavaServer
+    JavaServer --> Student
+    JavaServer --> Course
+    JavaServer --> Enrollment
+
+    Student --> DB
+    Course --> DB
+    Enrollment --> DB
+```
+
+---
+
+# 🔄 Complete Data Flow Diagram
+
+## Level 0 DFD
+
+```mermaid
+flowchart LR
+
+    Admin((Admin))
+    System[Students & Courses Management System]
+    Database[(SQLite Database)]
+
+    Admin -->|Manage Students & Courses| System
+    System -->|Store/Retrieve| Database
+```
+
+---
+
+## Level 1 DFD
+
+```mermaid
+flowchart TB
+
+    Admin((Admin))
+
+    subgraph System
+        A1[Student Management]
+        A2[Course Management]
+        A3[Enrollment Management]
+        A4[Dashboard]
+    end
+
+    DB[(SQLite Database)]
+
+    Admin --> A1
+    Admin --> A2
+    Admin --> A3
+    Admin --> A4
+
+    A1 --> DB
+    A2 --> DB
+    A3 --> DB
+    A4 --> DB
+```
+
+---
+
+# 🗃️ Database ER Diagram
+
+```mermaid
+erDiagram
+
+    STUDENTS {
+        int id PK
+        string reg_no 
+        string first_name
+        string last_name
+        string email
+        string status
+    }
+
+    INSTRUCTORS {
+        string FiD PK
+        string first_name
+        string last_name
+        string email
+        string department
+    }
+
+    COURSES {
+        string code PK
+        string title
+        int credits
+        string department
+        string instructor_id FK
+        string semester
+    }
+
+    ENROLLMENTS {
+        string student_reg_no FK
+        string course_code FK
+        string grade
+    }
+
+    STUDENTS ||--o{ ENROLLMENTS : enrolls
+    COURSES ||--o{ ENROLLMENTS : contains
+    INSTRUCTORS ||--o{ COURSES : teaches
+```
+
+---
+
+# 📂 Project Structure
+
+```bash
+Campus-Course-Records-Manager/
+│
+├── bin/                       # Compiled Java .class files
+├── lib/                       # Dependencies
+│   └── sqlite-jdbc-3.36.0.3.jar
+│
+├── public/                    # Frontend UI Assets
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── app.js
+│   └── index.html
+│
+├── src/                       # Backend Java Source Code
+│   └── edu/ccrm/
+│       ├── config/            # Application configuration
+│       ├── domain/            # POJOs (Student, Course, etc)
+│       ├── exception/         # Custom exceptions
+│       ├── io/                # Database Manager & Initializer
+│       ├── service/           # Business logic
+│       ├── util/              # Utilities (JSON parsing)
+│       └── web/               # CCRMWebServer & API Handlers
+│
+├── database_setup.sql         # Initial Schema Script
+└── README.md
+```
+
+---
+
+# ⚙️ Installation Guide
+
+## 1️⃣ Clone Repository
+
+```bash
+git clone https://github.com/udityamerit/Students-and-Courses-Management-System.git
+```
+
+## 2️⃣ Navigate to Project Directory
+
+```bash
+cd Students-and-Courses-Management-System
+```
+
+## 3️⃣ Prerequisites
+
+Ensure you have **Java Development Kit (JDK) 11** or higher installed. You **do not** need XAMPP, WAMP, or an external MySQL server, as this project uses a highly efficient, self-contained **local SQLite database**.
+
+---
+
+# 🗄️ Database Setup
+
+You **do not need to manually create the database** or install phpMyAdmin! 
+
+The system utilizes an automated initialization script. When you run the Java backend for the first time, it will automatically:
+1. Create a local `app-data/ccrm.db` SQLite file.
+2. Execute the `database_setup.sql` script to create the necessary tables.
+3. Import initial seed data if available.
+
+---
+
+# ▶️ Running the Project
+
+## Step 1: Compile the Java Backend
+Navigate to the project's root directory and run the following command to compile the source code:
+
+```bash
+javac -d bin -cp "lib/sqlite-jdbc-3.36.0.3.jar" src/edu/ccrm/config/*.java src/edu/ccrm/domain/*.java src/edu/ccrm/exception/*.java src/edu/ccrm/io/*.java src/edu/ccrm/service/*.java src/edu/ccrm/util/*.java src/edu/ccrm/web/*.java src/edu/ccrm/web/handler/*.java
+```
+
+## Step 2: Start the Server
+Start the local HTTP web server and connect it to the SQLite database:
+
+```bash
+java -cp "bin;lib/sqlite-jdbc-3.36.0.3.jar" edu.ccrm.web.CCRMWebServer
+```
+
+## Step 3: Access the Application
+Open your modern web browser and navigate to:
+```bash
+http://localhost:8080
+```
+
+---
+
+# 📸 Screenshots
+
+## 🏠 Dashboard
 ![Dashboard Showcase](docs/showcase/dashboard.png)
-*A sleek, modern dashboard with animated glowing orbs and real-time statistics.*
 
-### **Student Records**
+---
+
+## 👨‍🎓 Student Module
 ![Student Records](docs/showcase/students.png)
-*Data tables utilizing modern zebra-striping and intuitive status pill badges.*
 
-### **Elegant Forms**
+---
+
+## 📚 Forms & Data Entry
 ![Floating Label Forms](docs/showcase/forms.png)
-*Responsive data entry forms featuring interactive floating labels and custom validation.*
 
 ---
 
-## **3. Getting Started**
+# 🚀 Future Enhancements
 
-To compile and execute the SCMS web application locally, ensure your system meets the following prerequisites:
-
-* **Java Development Kit (JDK)**: Version 11 or newer.
-* **SQLite Database**: The application is pre-configured to run with a local file-based SQLite database (`app-data/ccrm.db`), requiring **zero** additional database setup!
-
-### **Execution Instructions:**
-
-1. **Obtain the Source Code**:
-   ```bash
-   git clone https://github.com/saimerit/Campus-Course-Records-Manager.git
-   ```
-
-2. **Compile the Application**:  
-   Navigate to the project's root directory and execute the following command. This will compile all Java source files and place the generated `.class` files into the `bin` directory, ensuring the SQLite JDBC driver is included.
-   ```bash
-   javac -d bin -cp "lib/sqlite-jdbc-3.36.0.3.jar" src/edu/ccrm/config/*.java src/edu/ccrm/domain/*.java src/edu/ccrm/exception/*.java src/edu/ccrm/io/*.java src/edu/ccrm/service/*.java src/edu/ccrm/util/*.java src/edu/ccrm/web/*.java src/edu/ccrm/web/handler/*.java
-   ```
-
-3. **Launch the Application**:  
-   With the compilation complete, run the application using this command:
-   ```bash
-   java -cp "bin;lib/sqlite-jdbc-3.36.0.3.jar" edu.ccrm.web.CCRMWebServer
-   ```
-
-4. **Access the Web Interface**:  
-   Upon successful execution, the custom web server will start on port `8080`. Open your favorite modern web browser and navigate to:
-   **[http://localhost:8080](http://localhost:8080)**
+* Attendance Management
+* Result and Grading Workflows
+* Email Notifications
+* Student Analytics Dashboard
+* JWT Authentication & Role-Based Access Control
+* Advanced Data Exporting (PDF/Excel)
+* Responsive Mobile UI Enhancements
+* AI-Based Performance Prediction
 
 ---
 
-## **4. Database Configuration**
+# 🧪 Testing
 
-This application uses **SQLite**, a fast, self-contained, file-based database. No external database servers or users are required!
+## Manual Testing
 
-### **Schema Initialization**
+* Student & Course CRUD Operations
+* Enrollment Validation
+* Database Persistence Check
+* UI Responsiveness & Browser Caching Testing
 
-The application automates the creation of the database schema. When you first run the application, it will detect the absence of the required tables, automatically execute the `database_setup.sql` script to create them, and save the active database in the `app-data/` directory.
+## Suggested Future Testing
 
----
-
-## **5. Project Architecture & Syllabus Mapping**
-
-This project is a testament to a solid foundation in core Java principles, object-oriented programming (OOP), modern custom Web Server implementation using `com.sun.net.httpserver`, and JDBC for database interaction.
-
-| Syllabus Concept | Demonstrated in File/Class/Method |
-| :---- | :---- |
-| **Custom HTTP Server** | `CCRMWebServer.java`, `StaticFileHandler.java` |
-| **RESTful API Handlers** | `ApiHandlers.java` |
-| **Encapsulation** | `Student.java`, `Course.java` |
-| **Inheritance** | `Person.java` (abstract base class) |
-| **Polymorphism** | `TranscriptService.java` |
-| **Abstraction** | `Person.java` |
-| **Singleton Design Pattern** | `AppConfig.java` |
-| **Builder Design Pattern** | `Course.java` |
-| **Custom Exceptions** | `DuplicateEnrollmentException.java`, `MaxCreditLimitExceededException.java` |
+* Unit Testing (JUnit)
+* REST API Testing (Postman)
+* Security Testing
 
 ---
 
-## **6. The Evolution of Java (Educational Context)**
+# 🌐 Deployment
 
-* **1995**: Sun Microsystems officially announces the Java programming language.  
-* **1996**: The first version of the Java Development Kit (JDK 1.0) is released.  
-* **2004**: Java SE 5.0 introduces significant enhancements such as generics, annotations, and autoboxing.  
-* **2014**: Java SE 8 is launched, bringing major changes with Lambda expressions and the Stream API.  
-* **2021**: Java SE 17 is released, becoming the latest version with Long-Term Support (LTS).
+Because this project uses an embedded Java HTTP server and an SQLite database file, it can easily be deployed on containerized platforms or virtual private servers (VPS) such as:
 
-### **A Comparison of Java Editions: ME, SE, and EE**
+* Render (Dockerized)
+* Railway
+* AWS EC2
+* DigitalOcean Droplets
 
-| Aspect | Java ME (Micro Edition) | Java SE (Standard Edition) | Java EE (Enterprise Edition) |
-| :---- | :---- | :---- | :---- |
-| **Primary Application** | Designed for mobile devices and embedded systems. | The foundation for desktop, local servers, and console-based programs. | Tailored for large-scale, distributed web-centric enterprise applications. |
+---
 
+# 🤝 Contributing
+
+Contributions are welcome!
+
+## Contribution Steps
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature-name`)
+3. Commit changes (`git commit -m "Added new feature"`)
+4. Push to branch (`git push origin feature-name`)
+5. Open Pull Request
+
+---
+
+# 📜 License
+
+This project is licensed under the MIT License.
+
+---
+
+# 👨‍💻 Author
+
+### Uditya Narayan Tiwari
+
+## 🌐 Portfolio
+[https://udityanarayantiwari.netlify.app/](https://udityanarayantiwari.netlify.app/)
+
+## 💼 LinkedIn
+[https://www.linkedin.com/in/uditya-narayan-tiwari-562332289/](https://www.linkedin.com/in/uditya-narayan-tiwari-562332289/)
+
+## 💻 GitHub
+[https://github.com/udityamerit](https://github.com/udityamerit)
+
+## 📚 Knowledge Base
+[https://udityaknowledgebase.netlify.app/](https://udityaknowledgebase.netlify.app/)
+
+---
+
+# 📞 Contact
+
+For any queries or collaboration opportunities:
+📧 Contact via LinkedIn or GitHub
+
+---
+
+# ⭐ Support
+
+If you found this project useful:
+
+* ⭐ Star the repository
+* 🍴 Fork the project
+* 📢 Share with others
+
+---
+
+# 🔗 Repository Link
+
+[https://github.com/udityamerit/Students-and-Courses-Management-System](https://github.com/udityamerit/Students-and-Courses-Management-System)
