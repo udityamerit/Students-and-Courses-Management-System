@@ -53,7 +53,7 @@ To compile and execute the SCMS web application locally, ensure your system meet
 2. **Compile the Application**:  
    Navigate to the project's root directory and execute the following command. This will compile all Java source files and place the generated `.class` files into the `bin` directory, ensuring the SQLite JDBC driver is included.
    ```bash
-   javac -d bin -cp "lib/sqlite-jdbc-3.36.0.3.jar" src/edu/ccrm/cli/*.java src/edu/ccrm/config/*.java src/edu/ccrm/domain/*.java src/edu/ccrm/exception/*.java src/edu/ccrm/io/*.java src/edu/ccrm/service/*.java src/edu/ccrm/util/*.java src/edu/ccrm/web/*.java src/edu/ccrm/web/handler/*.java
+   javac -d bin -cp "lib/sqlite-jdbc-3.36.0.3.jar" src/edu/ccrm/config/*.java src/edu/ccrm/domain/*.java src/edu/ccrm/exception/*.java src/edu/ccrm/io/*.java src/edu/ccrm/service/*.java src/edu/ccrm/util/*.java src/edu/ccrm/web/*.java src/edu/ccrm/web/handler/*.java
    ```
 
 3. **Launch the Application**:  
