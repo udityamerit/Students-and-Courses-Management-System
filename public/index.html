@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCMS - Students and Courses Management System</title>
+    <!-- Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css?v=4">
+</head>
+<body>
+    <!-- Animated Background Orbs -->
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="app-container glass-panel">
+        
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar glass-panel">
+            <div class="logo">
+                <h1>SCMS</h1>
+                <p>Management System</p>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" data-target="introduction" class="active">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+                    Introduction
+                </a></li>
+                <li><a href="#" data-target="dashboard">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Dashboard
+                </a></li>
+                <li><a href="#" data-target="students">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    Students
+                </a></li>
+                <li><a href="#" data-target="instructors">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    Instructors
+                </a></li>
+                <li><a href="#" data-target="courses">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                    Courses
+                </a></li>
+                <li><a href="#" data-target="enrollments">
+                    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                    Enrollments
+                </a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            
+            <!-- Introduction Section -->
+            <section id="introduction" class="content-section active">
+                <header class="section-header" style="flex-direction: column; align-items: flex-start; text-align: left;">
+                    <h2 style="font-size: 2.8rem; background: linear-gradient(135deg, #f8fafc, #a1a1aa); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Students & Courses Management System</h2>
+                    <p style="max-width: 900px; line-height: 1.8; font-size: 1.1rem; margin-top: 1.5rem; color: #cbd5e1;">Welcome to <strong>SCMS</strong>, a production-grade administrative platform engineered for modern educational institutions. Transitioning from legacy paper trails to our highly resilient, centralized digital architecture eliminates manual bottlenecks, enforces strict data integrity, and scales effortlessly from small campuses to massive universities.</p>
+                </header>
+                <div class="cards-container">
+                    <div class="card glass-card fade-in">
+                        <div class="card-icon" style="color: #60a5fa; background: rgba(59,130,246,0.1);">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        </div>
+                        <h3 style="color: #f8fafc; font-size: 1.3rem;">Streamlined Administration</h3>
+                        <p style="display: block; color: var(--text-secondary); margin-bottom: 0;">Eliminates hours of manual paperwork by automating student registrations, course assignments, and grading all within a single intuitive interface.</p>
+                    </div>
+                    <div class="card glass-card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-icon" style="color: #34d399; background: rgba(16,185,129,0.1);">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+                        </div>
+                        <h3 style="color: #f8fafc; font-size: 1.3rem;">Data Accuracy & Integrity</h3>
+                        <p style="display: block; color: var(--text-secondary); margin-bottom: 0;">Prevents lost grades and enrollment errors through a centralized, resilient database structure that enforces strict data relationships.</p>
+                    </div>
+                    <div class="card glass-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-icon" style="color: #c084fc; background: rgba(192,132,252,0.1);">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                        </div>
+                        <h3 style="color: #f8fafc; font-size: 1.3rem;">Institutional Scalability</h3>
+                        <p style="display: block; color: var(--text-secondary); margin-bottom: 0;">Designed to scale effortlessly. Whether managing 100 or 10,000 student records, the system remains lightning-fast and universally accessible.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section">
+                <header class="section-header">
+                    <h2>Live Dashboard</h2>
+                    <p>Real-time overview of the system's current data metrics.</p>
+                </header>
+                <div class="cards-container">
+                    <div class="card glass-card fade-in">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        </div>
+                        <div class="stat-value" id="stat-students">0</div>
+                        <h3>Total Students</h3>
+                        <p>Active and inactive records.</p>
+                        <button onclick="app.navigate('students')" class="btn-primary">View Students</button>
+                    </div>
+                    <div class="card glass-card fade-in" style="animation-delay: 0.1s;">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+                        </div>
+                        <div class="stat-value" id="stat-courses">0</div>
+                        <h3>Active Courses</h3>
+                        <p>Available course catalog.</p>
+                        <button onclick="app.navigate('courses')" class="btn-primary">View Courses</button>
+                    </div>
+                    <div class="card glass-card fade-in" style="animation-delay: 0.2s;">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                        </div>
+                        <div class="stat-value" id="stat-enrollments">0</div>
+                        <h3>Total Enrollments</h3>
+                        <p>Student course registrations.</p>
+                        <button onclick="app.navigate('enrollments')" class="btn-primary">View Enrollments</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Students Section -->
+            <section id="students" class="content-section">
+                <header class="section-header">
+                    <h2>Students Management</h2>
+                    <button id="btn-add-student" class="btn-primary">Add Student</button>
+                </header>
+                
+                <div class="table-container glass-panel fade-in">
+                    <table id="students-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Reg No</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Student Form (Hidden by default) -->
+                <div id="form-student" class="form-container glass-panel fade-in" style="display: none;">
+                    <h3>Add New Student</h3>
+                    <form id="add-student-form">
+                        <div class="form-group floating">
+                            <input type="number" name="id" id="s-id" required placeholder=" ">
+                            <label for="s-id">Student ID</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="regNo" id="s-regNo" required placeholder=" ">
+                            <label for="s-regNo">Reg No</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="firstName" id="s-fn" required placeholder=" ">
+                            <label for="s-fn">First Name</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="lastName" id="s-ln" required placeholder=" ">
+                            <label for="s-ln">Last Name</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="email" name="email" id="s-email" required placeholder=" ">
+                            <label for="s-email">Email</label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-success">Save</button>
+                            <button type="button" class="btn-cancel" onclick="app.hideForm('form-student')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Instructors Section -->
+            <section id="instructors" class="content-section">
+                <header class="section-header">
+                    <h2>Instructors Management</h2>
+                    <button id="btn-add-instructor" class="btn-primary">Add Instructor</button>
+                </header>
+                <div class="table-container glass-panel fade-in">
+                    <table id="instructors-table">
+                        <thead>
+                            <tr>
+                                <th>FiD</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Department</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Instructor Form -->
+                <div id="form-instructor" class="form-container glass-panel fade-in" style="display: none;">
+                    <h3>Add New Instructor</h3>
+                    <form id="add-instructor-form">
+                        <div class="form-group floating">
+                            <input type="text" name="fid" id="i-fid" required placeholder=" ">
+                            <label for="i-fid">FiD</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="firstName" id="i-fn" required placeholder=" ">
+                            <label for="i-fn">First Name</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="lastName" id="i-ln" required placeholder=" ">
+                            <label for="i-ln">Last Name</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="email" name="email" id="i-email" required placeholder=" ">
+                            <label for="i-email">Email</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="department" id="i-dept" required placeholder=" ">
+                            <label for="i-dept">Department</label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-success">Save</button>
+                            <button type="button" class="btn-cancel" onclick="app.hideForm('form-instructor')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Courses Section -->
+            <section id="courses" class="content-section">
+                <header class="section-header">
+                    <h2>Courses Management</h2>
+                    <button id="btn-add-course" class="btn-primary">Add Course</button>
+                </header>
+                <div class="table-container glass-panel fade-in">
+                    <table id="courses-table">
+                        <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Title</th>
+                                <th>Credits</th>
+                                <th>Department</th>
+                                <th>Semester</th>
+                                <th>Instructor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Course Form -->
+                <div id="form-course" class="form-container glass-panel fade-in" style="display: none;">
+                    <h3>Add New Course</h3>
+                    <form id="add-course-form">
+                        <div class="form-group floating">
+                            <input type="text" name="code" id="c-code" required placeholder=" ">
+                            <label for="c-code">Code</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="title" id="c-title" required placeholder=" ">
+                            <label for="c-title">Title</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="number" name="credits" id="c-credits" required placeholder=" ">
+                            <label for="c-credits">Credits</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="department" id="c-dept" required placeholder=" ">
+                            <label for="c-dept">Department</label>
+                        </div>
+                        <div class="form-group floating">
+                            <select name="semester" id="c-sem" required>
+                                <option value="FALL">FALL</option>
+                                <option value="SPRING">SPRING</option>
+                                <option value="SUMMER">SUMMER</option>
+                            </select>
+                            <label for="c-sem" class="active-label">Semester</label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-success">Save</button>
+                            <button type="button" class="btn-cancel" onclick="app.hideForm('form-course')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Enrollments Section -->
+            <section id="enrollments" class="content-section">
+                <header class="section-header">
+                    <h2>Enrollments & Grades</h2>
+                    <button id="btn-add-enrollment" class="btn-primary">Enroll Student</button>
+                </header>
+                <div class="table-container glass-panel fade-in">
+                    <table id="enrollments-table">
+                        <thead>
+                            <tr>
+                                <th>Student Reg No</th>
+                                <th>Student Name</th>
+                                <th>Course Code</th>
+                                <th>Course Title</th>
+                                <th>Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Populated by JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Add Enrollment Form -->
+                <div id="form-enrollment" class="form-container glass-panel fade-in" style="display: none;">
+                    <h3>Enroll Student</h3>
+                    <form id="add-enrollment-form">
+                        <div class="form-group floating">
+                            <input type="text" name="regNo" id="e-regno" required placeholder=" ">
+                            <label for="e-regno">Student Reg No</label>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="text" name="courseCode" id="e-coursecode" required placeholder=" ">
+                            <label for="e-coursecode">Course Code</label>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn-success">Enroll</button>
+                            <button type="button" class="btn-cancel" onclick="app.hideForm('form-enrollment')">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="toast"></div>
+
+    <script src="js/app.js?v=3"></script>
+</body>
+</html>
