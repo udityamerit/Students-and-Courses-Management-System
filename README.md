@@ -1,4 +1,4 @@
-# 🎓 Students and Courses Management System
+# Students and Courses Management System
 
 A modern and efficient **Students and Courses Management System (SCMS)** designed to streamline academic operations such as student management, course handling, enrollments, and administrative workflows.
 
@@ -6,28 +6,28 @@ This project provides a centralized platform for managing educational data with 
 
 ---
 
-# 📌 Table of Contents
+# Table of Contents
 
-- [Overview](#-overview)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [System Architecture](#️-system-architecture)
-- [Data Flow Diagram](#-complete-data-flow-diagram)
-- [Database Design](#️-database-er-diagram)
-- [Project Structure](#-project-structure)
-- [Installation Guide](#️-installation-guide)
-- [Database Setup](#️-database-setup)
-- [Running the Project](#️-running-the-project)
-- [Screenshots](#-screenshots)
-- [Future Enhancements](#-future-enhancements)
-- [Testing](#-testing)
-- [Contributing](#-contributing)
-- [License](#-license)
-- [Author](#-author)
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [System Architecture](#system-architecture)
+- [Data Flow Diagram](#complete-data-flow-diagram)
+- [Database Design](#database-er-diagram)
+- [Project Structure](#project-structure)
+- [Installation Guide](#installation-guide)
+- [Database Setup](#database-setup)
+- [Running the Project](#running-the-project)
+- [Screenshots](#screenshots)
+- [Future Enhancements](#future-enhancements)
+- [Testing](#testing)
+- [Contributing](#contributing)
+- [License](#license)
+- [Author](#author)
 
 ---
 
-# 📖 Overview
+# Overview
 
 The **Students and Courses Management System** is a web-based application developed to simplify the management of:
 
@@ -40,36 +40,36 @@ The system helps administrators efficiently organize and maintain academic data 
 
 ---
 
-# ✨ Features
+# Features
 
-## 👨‍🎓 Student Management
+## Student Management
 - Add new students via modern floating-label forms
 - View all student records
 - Track student statuses via intuitive, colorful badges
 
-## 📚 Course Management
+## Course Management
 - Create new courses
 - View course details and credits
 - Assign courses to specific departments and semesters
 
-## 📝 Enrollment System
+## Enrollment System
 - Enroll students in courses
 - Manage student-course relationships
 - Track registered courses
 
-## 📊 Dashboard
+## Dashboard
 - Real-time overview of metrics
 - Academic statistics (Total Students, Active Courses, Total Enrollments)
 - Interactive hover effects and quick access to system modules
 
-## 🗄️ Database Operations
+## Database Operations
 - Efficient file-based CRUD operations
 - Zero-configuration auto-setup schema
 - Relational database design utilizing Java JDBC
 
 ---
 
-# 🛠️ Tech Stack
+# Tech Stack
 
 | Technology | Purpose |
 |---|---|
@@ -82,7 +82,7 @@ The system helps administrators efficiently organize and maintain academic data 
 
 ---
 
-# 🏗️ System Architecture
+# System Architecture
 
 ```mermaid
 flowchart TB
@@ -118,7 +118,7 @@ flowchart TB
 
 ---
 
-# 🔄 Complete Data Flow Diagram
+# Complete Data Flow Diagram
 
 ## Level 0 DFD
 
@@ -164,7 +164,7 @@ flowchart TB
 
 ---
 
-# 🗃️ Database ER Diagram
+# Database ER Diagram
 
 ```mermaid
 erDiagram
@@ -208,7 +208,7 @@ erDiagram
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```bash
 Campus-Course-Records-Manager/
@@ -240,27 +240,27 @@ Campus-Course-Records-Manager/
 
 ---
 
-# ⚙️ Installation Guide
+# Installation Guide
 
-## 1️⃣ Clone Repository
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/udityamerit/Students-and-Courses-Management-System.git
 ```
 
-## 2️⃣ Navigate to Project Directory
+## 2. Navigate to Project Directory
 
 ```bash
 cd Students-and-Courses-Management-System
 ```
 
-## 3️⃣ Prerequisites
+## 3. Prerequisites
 
 Ensure you have **Java Development Kit (JDK) 11** or higher installed. You **do not** need XAMPP, WAMP, or an external MySQL server, as this project uses a highly efficient, self-contained **local SQLite database**.
 
 ---
 
-# 🗄️ Database Setup
+# Database Setup
 
 You **do not need to manually create the database** or install phpMyAdmin! 
 
@@ -271,7 +271,7 @@ The system utilizes an automated initialization script. When you run the Java ba
 
 ---
 
-# ▶️ Running the Project
+# Running the Project
 
 ## Step 1: Compile the Java Backend
 Navigate to the project's root directory and run the following command to compile the source code:
@@ -295,24 +295,24 @@ http://localhost:8080
 
 ---
 
-# 📸 Screenshots
+# Screenshots
 
-## 🏠 Dashboard
+## Dashboard
 ![Dashboard Showcase](docs/showcase/dashboard.png)
 
 ---
 
-## 👨‍🎓 Student Module
+## Student Module
 ![Student Records](docs/showcase/students.png)
 
 ---
 
-## 📚 Forms & Data Entry
+## Forms & Data Entry
 ![Floating Label Forms](docs/showcase/forms.png)
 
 ---
 
-# 🚀 Future Enhancements
+# Future Enhancements
 
 * Attendance Management
 * Result and Grading Workflows
@@ -325,7 +325,7 @@ http://localhost:8080
 
 ---
 
-# 🧪 Testing
+# Testing
 
 ## Manual Testing
 
@@ -342,7 +342,7 @@ http://localhost:8080
 
 ---
 
-# 🌐 Deployment
+# Deployment
 
 Because this project uses an embedded Java HTTP server and an SQLite database file, it can easily be deployed on containerized platforms or virtual private servers (VPS) such as:
 
@@ -353,7 +353,7 @@ Because this project uses an embedded Java HTTP server and an SQLite database fi
 
 ---
 
-# 🤝 Contributing
+# Contributing
 
 Contributions are welcome!
 
@@ -367,47 +367,47 @@ Contributions are welcome!
 
 ---
 
-# 📜 License
+# License
 
 This project is licensed under the MIT License.
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 ### Uditya Narayan Tiwari
 
-## 🌐 Portfolio
+## Portfolio
 [https://udityanarayantiwari.netlify.app/](https://udityanarayantiwari.netlify.app/)
 
-## 💼 LinkedIn
+## LinkedIn
 [https://www.linkedin.com/in/uditya-narayan-tiwari-562332289/](https://www.linkedin.com/in/uditya-narayan-tiwari-562332289/)
 
-## 💻 GitHub
+## GitHub
 [https://github.com/udityamerit](https://github.com/udityamerit)
 
-## 📚 Knowledge Base
+## Knowledge Base
 [https://udityaknowledgebase.netlify.app/](https://udityaknowledgebase.netlify.app/)
 
 ---
 
-# 📞 Contact
+# Contact
 
 For any queries or collaboration opportunities:
-📧 Contact via LinkedIn or GitHub
+Contact via LinkedIn or GitHub
 
 ---
 
-# ⭐ Support
+# Support
 
 If you found this project useful:
 
-* ⭐ Star the repository
-* 🍴 Fork the project
-* 📢 Share with others
+* Star the repository
+* Fork the project
+* Share with others
 
 ---
 
-# 🔗 Repository Link
+# Repository Link
 
 [https://github.com/udityamerit/Students-and-Courses-Management-System](https://github.com/udityamerit/Students-and-Courses-Management-System)
