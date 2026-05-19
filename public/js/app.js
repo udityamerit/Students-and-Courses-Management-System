@@ -3,11 +3,26 @@ const app = {
         this.bindNavigation();
         this.bindForms();
         
+        // Set DateTime
+        this.updateDateTime();
+        setInterval(() => this.updateDateTime(), 60000);
+        
         // Initial load
         this.loadStudents();
         this.loadInstructors();
         this.loadCourses();
         this.loadEnrollments();
+    },
+
+    updateDateTime() {
+        const dtElement = document.getElementById('current-datetime');
+        if (dtElement) {
+            const now = new Date();
+            const options = { month: 'short', day: 'numeric', year: 'numeric' };
+            const dateString = now.toLocaleDateString('en-US', options);
+            const timeString = now.toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'});
+            dtElement.innerHTML = `DateTime: ${dateString} | ${timeString}`;
+        }
     },
 
     bindNavigation() {
@@ -159,6 +174,12 @@ const app = {
             const data = await res.json();
             const tbody = document.querySelector('#instructors-table tbody');
             tbody.innerHTML = '';
+            
+            // Update Dashboard Stat
+            const statEl = document.getElementById('stat-instructors');
+            if (statEl) statEl.innerText = data.length;
+            const facultyTotalEl = document.getElementById('stat-faculty-total');
+            if (facultyTotalEl) facultyTotalEl.innerText = data.length;
             
             if (data.length === 0) {
                 tbody.innerHTML = `<tr><td colspan="4" class="empty-state">No instructors found. Add one to get started!</td></tr>`;
